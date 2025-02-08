@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   plpbenchmarkresults:
-    image: mi-erasmus/plpbenchmarkresults:1.0.0
+    image: ohdsi/plpbenchmarkresults:1.0.0
     build:
       context: .
       args:
@@ -9,4 +9,4 @@ services:
     ports:
       - "3838:3838"
     volumes:
-      - /Users/solonioannou/Documents/Github/mi-erasmusmc/PlpBenchmarkResults/data/sqlite/databaseFile.sqlite
+      - ~/data/sqlite/databaseFile.sqlite:/data/PlpBenchmarkResults/databaseFile.sqlite
