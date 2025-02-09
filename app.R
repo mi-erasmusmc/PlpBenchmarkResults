@@ -3,7 +3,7 @@ library("ResultModelManager")
 
 # Variable to fill in
 mySchema = "main"
-myServer = "data/sqlite/databaseFile.sqlite"
+myServer = "data/PlpBenchmarkResults/databaseFile.sqlite"
 myUser = NULL
 myPassword = NULL
 myDbms = "sqlite"
