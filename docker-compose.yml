@@ -9,4 +9,4 @@ services:
     ports:
       - "3838:3838"
     volumes:
-      - ~/data/sqlite/databaseFile.sqlite:/data/PlpBenchmarkResults/databaseFile.sqlite
+      - ~/data/PlpBenchmarkResults/databaseFile.sqlite:/data/PlpBenchmarkResults/databaseFile.sqlite
