@@ -1,8 +1,7 @@
 version: '3.8'
 services:
   plpbenchmarkresults:
-    image: ohdsi/plpbenchmarkresults:1.0.1
-    env_file: .env
+    image: ohdsi/plpbenchmarkresults:1.0.2
     build:
       context: .
       args:
