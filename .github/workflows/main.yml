@@ -7,7 +7,7 @@ on:
 
 env:
   APP_NAME: PlpBenchmarkResults # the Shiny application name in the OHDSI ShinyProxyDeploy gitHub repo application.yml file
-  DOCKER_IMAGE: ohdsi/plpbenchmarkresults
+  DOCKER_IMAGE: mi-erasmusmc/plpbenchmarkresults
   MAINTAINER: Solon Ioannou <s.ioannou@erasmusmc.nl>
   AUTHOR: Solon Ioannou <s.ioannou@erasmusmc.nl>
 
