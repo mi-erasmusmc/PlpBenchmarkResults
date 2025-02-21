@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   plpbenchmarkresults:
-    image: ohdsi/plpbenchmarkresults:1.0.6
+    image: mi-erasmusmc/plpbenchmarkresults:1.0.7
     build:
       context: .
       args:
