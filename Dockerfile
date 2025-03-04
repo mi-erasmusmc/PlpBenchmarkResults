@@ -11,15 +11,12 @@ RUN apt-get update && \
 RUN pip install faicons
 
 # install additional required R packages
-RUN R -e 'install.packages(c("remotes", "rJava", "dplyr", "DatabaseConnector", "ResultModelManager", "ggplot2", "plotly", "shinyWidgets", "shiny"), repos="http://cran.rstudio.com/")'
-
-RUN R CMD javareconf
+RUN R -e 'install.packages(c("remotes", "dplyr", "DatabaseConnector", "ResultModelManager", "ggplot2", "shinyWidgets", "shiny", "PatientLevelPrediction"), repos="http://cran.rstudio.com/")'
 
 # install OhdsiShinyModules R package from GitHub, temporarily adding a GitHub Personal Access Token (PAT) to the Renviron file
 RUN --mount=type=secret,id=build_github_pat \
   cp /usr/local/lib/R/etc/Renviron /tmp/Renviron \
         && echo "GITHUB_PAT=$(cat /run/secrets/build_github_pat)" >> /usr/local/lib/R/etc/Renviron \
-        && R -e "remotes::install_github(repo = 'OHDSI/PatientLevelPrediction', upgrade = 'always')" \
         && R -e "remotes::install_github(repo = 'OHDSI/ShinyAppBuilder', upgrade = 'always')" \
         && cp /tmp/Renviron /usr/local/lib/R/etc/Renviron
 
