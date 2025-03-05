@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   plpbenchmarkresults:
-    image: solis9753/plpbenchmarkresults:1.1.1
+    image: solis9753/plpbenchmarkresults:1.1.2
     build:
       context: .
       args:
@@ -9,4 +9,4 @@ services:
     ports:
       - "3838:3838"
     volumes:
-      - /tmp/PlpBenchmarkResults/databaseFile.sqlite:/data/PlpBenchmarkResults/databaseFile.sqlite
+      - ~/data/PlpBenchmarkResults/databaseFile.sqlite:/data/PlpBenchmarkResults/databaseFile.sqlite 
