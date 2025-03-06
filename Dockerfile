@@ -11,7 +11,7 @@ RUN apt-get update && \
 RUN pip install faicons
 
 # install additional required R packages
-RUN R -e 'install.packages(c("remotes", "dplyr", "DatabaseConnector", "ResultModelManager", "shiny", "PatientLevelPrediction"), repos="http://cran.rstudio.com/")'
+RUN R -e 'install.packages(c("remotes", "dplyr", "ParallelLogger", "DatabaseConnector", "ResultModelManager", "shiny", "PatientLevelPrediction"), repos="http://cran.rstudio.com/")'
 
 # install OhdsiShinyModules R package from GitHub, temporarily adding a GitHub Personal Access Token (PAT) to the Renviron file
 RUN --mount=type=secret,id=build_github_pat \
@@ -30,6 +30,8 @@ ARG GIT_COMMIT_ID_ABBREV=unknown
 
 # Set workdir and copy app files
 WORKDIR /srv/shiny-server/${APP_NAME}
+
+COPY data/PlpBenchmarkResults/databaseFile.sqlite /data/PlpBenchmarkResults/databaseFile.sqlite
 COPY . .
 
 ENV DATABASECONNECTOR_JAR_FOLDER /root
