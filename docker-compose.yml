@@ -1,12 +1,10 @@
 version: '3.8'
 services:
   plpbenchmarkresults:
-    image: solis9753/plpbenchmarkresults:1.1.2
+    image: solis9753/plpbenchmarkresults:1.1.3
     build:
       context: .
       args:
         APP_NAME: PlpBenchmarkResults
     ports:
       - "3838:3838"
-    volumes:
-      - ~/data/PlpBenchmarkResults/databaseFile.sqlite:/data/PlpBenchmarkResults/databaseFile.sqlite 
