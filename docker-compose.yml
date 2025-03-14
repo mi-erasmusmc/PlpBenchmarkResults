@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   plpbenchmarkresults:
-    image: solis9753/plpbenchmarkresults:0.0.1
+    image: solis9753/plpbenchmarkresults:0.0.2
     build:
       context: .
       args:
