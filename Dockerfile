@@ -17,7 +17,8 @@ RUN R -e 'install.packages(c("remotes", "dplyr", "ParallelLogger", "DatabaseConn
 RUN --mount=type=secret,id=build_github_pat \
   cp /usr/local/lib/R/etc/Renviron /tmp/Renviron \
         && echo "GITHUB_PAT=$(cat /run/secrets/build_github_pat)" >> /usr/local/lib/R/etc/Renviron \
-        && R -e "remotes::install_github(repo = 'OHDSI/ShinyAppBuilder', upgrade = 'always')" \
+        && R -e "remotes::install_github(repo = 'OHDSI/OhdsiShinyModules', upgrade = 'always')" \
+        && R -e "remotes::install_github(repo = 'OHDSI/OhdsiShinyAppBuilder', upgrade = 'always')" \
         && cp /tmp/Renviron /usr/local/lib/R/etc/Renviron
 
 # Set an argument for the app name
